@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const {Circle, Square, Triangle} = require("./lib/shape")
+const {Circle, Square, Triangle} = require("./lib/shape.js");
 // const path = require("path");
 
 const questions = [
@@ -15,6 +15,11 @@ const questions = [
     }, {
         type: "list",
         message: "What shape would you like your logo to be?",
+        choices: [
+           "Square",
+           "Circle",
+           "Triangle"
+        ],
         name: "shape"
     }, {
         type: "input",
@@ -27,4 +32,10 @@ function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
+function init() {
+    inquirer.prompt(questions).then((responses) => {
+        console.log("README.md File Loading...");
+        writeToFile("./logo.svg", ({...responses}));
+    });
+}
 init();
