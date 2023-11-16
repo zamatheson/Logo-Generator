@@ -6,3 +6,5 @@ https://drive.google.com/file/d/1OTviaE2Y2f2en1NpCq0MXo2l0Jw_PKpd/view
 
 # Set Up
 Inquirer and Node required.
+
+Download this repository. Create an integrated terminal and type "node index.js". Answer the questions and you're all set!
